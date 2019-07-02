@@ -42,8 +42,9 @@ const blogPosts = [
   }
   // and repeat many times
 ]
+```
 
-#normalized data model
+# normalized data model
 ```Javascript
 {
     posts : {
