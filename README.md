@@ -11,7 +11,7 @@
    const authorSchema = schema('author', {
      id: 'string',
      username: 'string',
-     name: 'string
+     name: 'string'
    })
    const commentSchema = schema('comment', {
      id: 'string',
