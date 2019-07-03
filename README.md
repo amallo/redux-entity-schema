@@ -1,3 +1,27 @@
+# Usage
+```Javascript
+   import {schema, oneToOne, oneToMany} from 'redux-entity'
+   const blogPostSchema = schema('blogPost', {
+     id: 'string',
+     author: oneToOne('author'), 
+     comments: oneToMany('comment')
+   });
+   const authorSchema = schema('author', {
+     id: 'string',
+     username: 'string',
+     name: 'string
+   })
+   const commentSchema = schema('comment', {
+     id: 'string',
+     author: oneToMany('blogPost'),
+     comment: 'string
+   })
+   const blogPostReducer = createReducer(blogPostSchema)
+   const authorReducer = createReducer(authorSchema)
+   const commentReducer = createReducer(commentSchema)
+   
+```
+
 # Uses cases
 
 ## Add a new BlogPost model
