@@ -1,0 +1,19 @@
+{
+  "name": "redux-entity",
+  "version": "1.0.0",
+  "description": "Another redux entity management",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amallo/redux-entity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amallo/redux-entity/issues"
+  },
+  "homepage": "https://github.com/amallo/redux-entity#readme"
+}
