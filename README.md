@@ -20,6 +20,10 @@
    const authorReducer = createReducer(authorSchema)
    const commentReducer = createReducer(commentSchema)
    
+   const blogPostSelectors = createSelectors(blogPostSchema)
+   const authorSelectors = createSelectors(authorSchema)
+   const commentSelectors = createSelectors(commentSchema)
+   
 ```
 
 # Uses cases
