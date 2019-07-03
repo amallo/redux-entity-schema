@@ -1,35 +1,49 @@
-# add entity
+# Uses cases
+
+## Add a new BlogPost model
+
 ```Javascript
-
-import {createEntityReducer, addEntity, createSchema} from "redux-entity"
-
-const ProgramSchema = createSchema({
-})
-const programReducer =  createEntityReducer(ProgramSchema)(initialState)
-addEntity(ProgramSchema)({
-  id: 'PROG_1',
-  title: 'this is a program,
-})
+   addEntity('blogPost', {
+      id: '1',
+      author: { id: 'user1', 'username: 'user1', name: 'User 1' },
+      comments: [
+      {
+        id: 'comment1',
+        author: { id: 'user2', username: 'user2', name: 'User 2' },
+        comment: '.....'
+      }
+   })
+```
+## create a generic reducer
+```Javascript
+   const blogPostReducer = createEntityReducer('blogPost')()
 ```
 
-# chain reducers
+## create a relationship reducer
 ```Javascript
+   const blogPostByAuthorReducer = createEntityReducer('blogPostByAuthor')()
+   addEntity('blogPostByAuthor', {
+      id: 'user1',
+      blogPosts : '1'
+   })
+   addEntity('blogPostByAuthor', {
+      id: 'user1',
+      blogPostId : '2'
+   })
+```
 
-import {createEntityReducer,  chainReducers} from "redux-entity"
-
-const initialState = {
-  byId: {},
-  allIds: {}
-  byDate: {},
-  byTitle: {}
-}
-const byDateProgram = (nextReducer) => (state, action){
-  
-}
-const byTitleProgram = (nextReducer) => (state, action){
-  
-}
-const programReducer =  createEntityReducer(ProgramSchema)(initialState)
-
-export default chainReducers(byDateProgram, byTitleProgram, programReducer)
+## create a BlogPost by author reducer
+```Javascript
+  const postByAuthorReducer = (state, action){
+     if ( (action.type === 'ADD_ENTITY') && (action.meta.entity === 'blogPost') ){
+         return {
+            byAuthor: {
+               id: 
+            }
+         }
+     }
+     return state
+  }
+  const blogPostReducer = createEntityReducer('blogPost')(initialState)
+  export default chainReducer(postByAuthorReducer, blogPostReducer)(initialState)
 ```
