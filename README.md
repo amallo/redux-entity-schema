@@ -1,6 +1,6 @@
 # Usage
 ```Javascript
-   import {schema, oneToOne, oneToMany} from 'redux-entity'
+   import {schema, oneToOne, oneToMany} from 'redux-schema'
    const blogPostSchema = schema('blogPost', {
      id: 'string',
      author: oneToOne('author'), 
