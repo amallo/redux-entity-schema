@@ -32,7 +32,7 @@
   addByIdEntity('author', {
       byId: {
         '1': {
-          'username: 'user1', name: 'User 1'
+          'username': 'user1', name: 'User 1'
         }
       }
    })
