@@ -15,24 +15,14 @@
    })
 ```
 ## create a generic reducer
+
 ```Javascript
    const blogPostReducer = createEntityReducer('blogPost')()
 ```
 
-## create a relationship reducer
-```Javascript
-   const blogPostByAuthorReducer = createEntityReducer('blogPostByAuthor')()
-   addEntity('blogPostByAuthor', {
-      id: 'user1',
-      blogPosts : '1'
-   })
-   addEntity('blogPostByAuthor', {
-      id: 'user1',
-      blogPostId : '2'
-   })
-```
 
 ## create a BlogPost by author reducer
+
 ```Javascript
   const postByAuthorReducer = (state, action){
      if ( (action.type === 'ADD_ENTITY') && (action.meta.entity === 'blogPost') ){
