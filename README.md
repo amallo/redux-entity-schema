@@ -26,7 +26,7 @@
         }
       }
    })
-  addAllIdsEntity('blogPost', ['1']
+  addAllIdsEntity('blogPost', ['1'])
 ```
 ```Javascript
   addByIdEntity('author', {
@@ -36,7 +36,7 @@
         }
       }
    })
-   addAllIdsEntity('author', ['user1']
+   addAllIdsEntity('author', ['user1'])
 ```
 ```Javascript
   addByIdEntity('comment', {
