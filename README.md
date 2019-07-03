@@ -46,6 +46,7 @@
       }
     }
    })
+   addAllIdsEntity('comment', ['comment1'])
 ```
 ```Javascript
   addOneToOneEntity('blogPost', 'author', {
