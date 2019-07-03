@@ -14,30 +14,37 @@
       }
    })
 ```
-## workflow
+### Workflow
 
 ```Javascript
-  addEntity('blogPost', {
-      id: '1',
-      author: { id: 'user1', 'username: 'user1', name: 'User 1' },
-      comments: [
-      {
-        id: 'comment1',
-        author: { id: 'user2', username: 'user2', name: 'User 2' },
-        comment: '.....'
+  addByIdEntity('blogPost', {
+      byId: {
+        '1': {
+          ....,
+          comments: ['comment1', ...],
+          author: 'user1'
+        }
       }
    })
+  addAllIdsEntity('blogPost', ['1']
 ```
 ```Javascript
-  addEntity('author', {
-      id: '1',
-      'username: 'user1', name: 'User 1'
+  addByIdEntity('author', {
+      byId: {
+        '1': {
+          'username: 'user1', name: 'User 1'
+        }
+      }
    })
+   addAllIdsEntity('author', ['user1']
 ```
 ```Javascript
-  addEntity('comment', {
-      id: 'comment1',
-      comment: '.....'
+  addByIdEntity('comment', {
+    byId: {
+      'comment1' : {
+        comment: '.....'
+      }
+    }
    })
 ```
 ```Javascript
