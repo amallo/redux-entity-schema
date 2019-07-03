@@ -1,7 +1,9 @@
 # Usage
+
 ```Javascript
    import {schema, oneToOne, oneToMany} from 'redux-schema'
-   const blogPostSchema = schema('blogPost', {
+
+const blogPostSchema = schema('blogPost', {
      id: 'string',
      author: oneToOne('author'), 
      comments: oneToMany('comment')
@@ -14,7 +16,7 @@
    const commentSchema = schema('comment', {
      id: 'string',
      author: oneToMany('blogPost'),
-     comment: 'string
+     comment: 'string'
    })
    const blogPostReducer = createReducer(blogPostSchema)
    const authorReducer = createReducer(authorSchema)
