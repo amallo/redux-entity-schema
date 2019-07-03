@@ -26,6 +26,10 @@
    const authorSelectors = createSelectors(authorSchema)
    const commentSelectors = createSelectors(commentSchema)
    
+   const blogPostActions = createActions(blogPostSchema)
+   const authorActions = createActions(authorSchema)
+   const commentActions = createActions(commentSchema)
+   
 ```
 
 # Uses cases
