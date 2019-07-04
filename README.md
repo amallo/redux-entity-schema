@@ -70,7 +70,8 @@ blogPostSelectors.findAllBlogPost(state, {
 ### Workflow
 
 ```Javascript
-  addByIdEntity('blogPost', {
+  const addBlogPostByIdEntity  = addByIdEntity(blogPostSchema)
+  addBlogPostByIdEntity({
       byId: {
         '1': {
           ....,
