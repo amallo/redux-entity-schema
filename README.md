@@ -118,6 +118,48 @@ blogPostSelectors.findAllBlogPost(state, {
       target: 'comment1'
    })
 ```
+## State
 
+```Javascript
+{
+   entities: {
+     blogPost: {
+       byId: {
+         '1': {
+           comments: ['comment1', ...],
+           author: 'user1'
+         }
+       },
+       allIds: ['1'],
+       references : {
+         '1': {
+            author: 'user1',
+            comment: ['comment1']
+         }
+       }
+     },
+     author: {
+       byId: {
+         '1': {
+           'username': 'user1', name: 'User 1'
+         }
+       },
+       allIds: ['1']
+     },
+     comment: {
+       byId: {
+          'comment1' : {
+             'comment': '...' 
+          }
+       },
+       references: {
+         'comment1' : {
+           author: 'user1',
+         }
+       }
+     }
+   }
+}
+```
 
 
