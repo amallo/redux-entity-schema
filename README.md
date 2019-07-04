@@ -140,11 +140,14 @@ blogPostSelectors.findAllBlogPost(state, {
      },
      author: {
        byId: {
-         '1': {
+         'user1': {
            'username': 'user1', name: 'User 1'
          }
        },
-       allIds: ['1']
+       allIds: ['1'],
+       references: {
+         blogPost: '1'
+       }
      },
      comment: {
        byId: {
