@@ -55,7 +55,8 @@ blogPostSelectors.findAllBlogPost(state, {
 ## Add a new BlogPost model
 
 ```Javascript
-   addEntity('blogPost', {
+   const addBlogPostEntity  = addEntity(blogPostSchema)
+   addBlogPostEntity({
       id: '1',
       author: { id: 'user1', 'username: 'user1', name: 'User 1' },
       comments: [
@@ -69,7 +70,8 @@ blogPostSelectors.findAllBlogPost(state, {
 ### Workflow
 
 ```Javascript
-  addByIdEntity('blogPost', {
+  const addBlogPostByIdEntity  = addByIdEntity(blogPostSchema)
+  addBlogPostByIdEntity({
       byId: {
         '1': {
           ....,
@@ -118,6 +120,51 @@ blogPostSelectors.findAllBlogPost(state, {
       target: 'comment1'
    })
 ```
+## State
 
+```Javascript
+{
+   entities: {
+     blogPost: {
+       byId: {
+         '1': {
+           comments: ['comment1', ...],
+           author: 'user1'
+         }
+       },
+       allIds: ['1'],
+       references : {
+         '1': {
+            author: 'user1',
+            comment: ['comment1']
+         }
+       }
+     },
+     author: {
+       byId: {
+         'user1': {
+           'username': 'user1', name: 'User 1'
+         }
+       },
+       allIds: ['1'],
+       references: {
+         blogPost: '1'
+       }
+     },
+     comment: {
+       byId: {
+          'comment1' : {
+             'comment': '...' 
+          }
+       },
+       references: {
+         'comment1' : {
+           author: 'user1',
+         }
+       }
+     }
+   }
+}
+```
 
 
