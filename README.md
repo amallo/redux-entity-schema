@@ -55,7 +55,8 @@ blogPostSelectors.findAllBlogPost(state, {
 ## Add a new BlogPost model
 
 ```Javascript
-   addEntity('blogPost', {
+   const addBlogPostEntity  = addEntity(blogPostSchema)
+   addBlogPostEntity({
       id: '1',
       author: { id: 'user1', 'username: 'user1', name: 'User 1' },
       comments: [
