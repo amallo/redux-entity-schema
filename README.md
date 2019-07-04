@@ -32,6 +32,24 @@
    
 ```
 
+# Selectors
+
+## Ready to use
+
+```Javascript
+const blogPostSelectors = createSelectors(blogPostSchema)
+blogPostSelectors.findOneBlogPost(state, {
+  author:{
+    username: 'user1'
+  }
+})
+blogPostSelectors.findAllBlogPost(state, {
+  author:{
+    username: 'user1'
+  }
+})
+```
+
 # Uses cases
 
 ## Add a new BlogPost model
