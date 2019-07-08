@@ -32,12 +32,15 @@
    
 ```
 
-# Uses cases
+# Usage
 
-## Add a new BlogPost model
+## Actions
+
+### Add a new BlogPost model
 
 ```Javascript
-   addEntity('blogPost', {
+   import {actions} from "./entities/blogPost"
+   actions.addBlogPostEntity({
       id: '1',
       author: { id: 'user1', 'username: 'user1', name: 'User 1' },
       comments: [
@@ -48,8 +51,9 @@
       }
    })
 ```
-### Workflow
 
+
+# Under the hood
 ```Javascript
   addByIdEntity('blogPost', {
       byId: {
