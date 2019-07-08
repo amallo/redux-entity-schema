@@ -36,7 +36,7 @@
 
 ## Actions
 
-### Add a new BlogPost model
+### Add a new BlogPost entity
 
 ```Javascript
    import {actions} from "./entities/blogPost"
@@ -52,57 +52,15 @@
    })
 ```
 
+## Selectors
 
-# Under the hood
 ```Javascript
-  addByIdEntity('blogPost', {
-      byId: {
-        '1': {
-          ....,
-          comments: ['comment1', ...],
-          author: 'user1'
-        }
-      }
-   })
-  addAllIdsEntity('blogPost', ['1'])
-```
-```Javascript
-  addByIdEntity('author', {
-      byId: {
-        '1': {
-          'username': 'user1', name: 'User 1'
-        }
-      }
-   })
-   addAllIdsEntity('author', ['user1'])
-```
-```Javascript
-  addByIdEntity('comment', {
-    byId: {
-      'comment1' : {
-        comment: '.....'
-      }
-    }
-   })
-   addAllIdsEntity('comment', ['comment1'])
-```
-```Javascript
-  addOneToOneEntity('blogPost', 'author', {
-      source: '1',
-      target: '1'
-   })
-```
-```Javascript
-  addOneToManyEntity('author', 'blogPost', {
-      source: '1',
-      target: '1'
-   })
-```
-```Javascript
-  addOneToManyEntity('blogPost', 'comment', {
-      source: '1',
-      target: 'comment1'
-   })
+const blogPostSelectors = createSelectors(blogPostSchema)
+blogPostSelectors.find({
+   id: 'id1'
+ })
+blogPostSelectors.findByAuthor({})
+blogPostSelectors.findByComments({}
 ```
 
 
