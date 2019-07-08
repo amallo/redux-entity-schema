@@ -52,6 +52,17 @@
    })
 ```
 
+
+### Update a new BlogPost entity
+
+```Javascript
+   import {actions} from "./entities/blogPost"
+   actions.updateBlogPostEntity({
+      id: '1',
+      author: { id: 'user1', 'username: 'user1_updated' }
+   })
+```
+
 ## Selectors
 
 ```Javascript
