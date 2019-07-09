@@ -18,9 +18,9 @@
      author: oneToMany('blogPost'),
      comment: 'string'
    })
-   const blogPostReducer = createReducer(blogPostSchema)
-   const authorReducer = createReducer(authorSchema)
-   const commentReducer = createReducer(commentSchema)
+   const blogPostReducer = createReducers(blogPostSchema)
+   const authorReducer = createReducers(authorSchema)
+   const commentReducer = createReducers(commentSchema)
 
    const blogPostSelectors = createSelectors(blogPostSchema)
    const authorSelectors = createSelectors(authorSchema)
@@ -34,9 +34,8 @@
 
 # Usage
 
-## Actions
 
-### Add a new BlogPost entity
+## Add a new BlogPost entity
 
 ```Javascript
    import {actions} from "./entities/blogPost"
@@ -53,15 +52,27 @@
 ```
 
 
-### Update a new BlogPost entity
+## Update a BlogPost entity
 
 ```Javascript
+
    import {actions} from "./entities/blogPost"
    actions.updateBlogPostEntity({
       id: '1',
       author: { id: 'user1', 'username: 'user1_updated' }
    })
 ```
+
+## Group BlogPost by Author reducer
+```Javascript
+
+   const blogPostActions = createActions(blogPostSchema)   
+   actions.groupBy({
+      id: '1',
+      author: { id: 'user1', 'username: 'user1_updated' }
+   }, 'author.username', 'byAuthor')
+```
+
 
 ## Selectors
 
@@ -71,7 +82,11 @@ blogPostSelectors.find({
    id: 'id1'
  })
 blogPostSelectors.findByAuthor({})
-blogPostSelectors.findByComments({}
+blogPostSelectors.findByComments({})
+blogPostSelectors.findAll({})
+blogPostSelectors.findAllByAuthor({})
+blogPostSelectors.findAllByComments({})
+
 ```
 
 
