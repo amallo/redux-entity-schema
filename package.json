@@ -22,6 +22,7 @@
     "jest": "^24.8.0"
   },
   "dependencies": {
+    "normalizr": "^3.4.0",
     "ramda": "^0.26.1"
   }
 }
