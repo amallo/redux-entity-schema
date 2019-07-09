@@ -65,12 +65,27 @@
 
 ## Group BlogPost by Author reducer
 ```Javascript
-
-   const blogPostActions = createActions(blogPostSchema)   
-   actions.groupBy({
-      id: '1',
-      author: { id: 'user1', 'username: 'user1_updated' }
-   }, 'author.username', 'byAuthor')
+   import reduceReducers from 'reduce-reducers';
+   const groupByAuthorReducer = (state, action)=>{
+      switch(action.type){ 
+        case ADD_BLOG_POST_ENTITY : 
+           return {
+             byAuthor: {.......}
+           }
+        case REMOVE_BLOG_POST_ENTITY : 
+           return {
+             byAuthor: {.......}
+           }
+        case UPDATE_BLOG_POST_ENTITY : 
+           return {
+             byAuthor: {.......}
+           }
+        default: 
+            return state
+      }
+   }
+   const blogPostReducer = createReducers(blogPostSchema, initialState)
+   export default reducerReducers(initialState, blogPostReducer, groupByAuthorReducer)
 ```
 
 
