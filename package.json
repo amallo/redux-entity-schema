@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "normalizr": "^3.4.0",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "redux-saga": "^1.0.5"
   }
 }
