@@ -3,16 +3,18 @@
 ```Javascript
    import {schema, oneToOne, oneToMany} from 'redux-schema'
 
-   const blogPostSchema = schema('blogPost', {
-     id: 'string',
-     author: oneToOne('author'), 
-     comments: oneToMany('comment')
-   });
    const authorSchema = schema('author', {
      id: 'string',
      username: 'string',
      name: 'string'
    })
+
+   const blogPostSchema = schema('blogPost', {
+     id: 'string',
+     author: authorSchema, 
+     comments: oneToMany('comment')
+   });
+
    const commentSchema = schema('comment', {
      id: 'string',
      author: oneToMany('blogPost'),
@@ -34,21 +36,30 @@
 
 # Selectors
 
-## Ready to use
-
+## Find all blog post of a given author
 ```Javascript
-const blogPostSelectors = createSelectors(blogPostSchema)
-blogPostSelectors.findOneBlogPost(state, {
-  author:{
-    username: 'user1'
-  }
-})
-blogPostSelectors.findAllBlogPost(state, {
-  author:{
+
+blogPostSelectors.findAllBlogPostByAuthor(state, {
     username: 'user1'
   }
 })
 ```
+
+## Find one blog post of a given author
+```Javascript
+blogPostSelectors.findOneBlogPostByAuthor(state, {
+    username: 'user1'
+  }
+})
+```
+
+
+## Find all comments of a given author
+```Javascript
+commentSelectors.findAllCommentByAuthor(state, {
+})
+```
+
 
 # Uses cases
 
