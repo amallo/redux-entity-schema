@@ -7,6 +7,17 @@ The following example provides your a simple usage :
 ```Javascript
 import {createSelectors, makeSchema} from 'redux-entity-schema'
 
+const state = {
+  entities: {
+    blogPost: {
+      ....
+    },
+    author: {
+      ....
+    }
+  }
+}
+
 const authorSchema = makeSchema("author")
 const blogPostSchema = makeSchema("blogPost", {
   author: authorSchema
@@ -16,20 +27,20 @@ const authorSelector = createSelectors(authorSchema)
 const blogPostSelectors = createSelectors(blogPostSchema);
 
 // select one blog post by id
-blogPostSelectors.findOne({
+blogPostSelectors.findOne(state, {
   id: 1
 })
 
 // select all blog post written yesterday
-blogPostSelectors.findAll({
+blogPostSelectors.findAll(state, {
   createdAt: 'yesterday'
 })
 
 // select all blog post written by audie
-const author = authorSelector.findOne({
+const author = authorSelector.findOne(state, {
   name: 'audie'
 })
-blogPostSelectors.findAll({
+blogPostSelectors.findAll(state, {
   author: {
     id: author.id
   }
