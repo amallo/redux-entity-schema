@@ -7,16 +7,6 @@ The following example provides your a simple usage :
 ```Javascript
 import {createSelectors, makeSchema} from 'redux-entity-schema'
 
-const state = {
-  entities: {
-    blogPost: {
-      ....
-    },
-    author: {
-      ....
-    }
-  }
-}
 
 const authorSchema = makeSchema("author")
 const blogPostSchema = makeSchema("blogPost", {
